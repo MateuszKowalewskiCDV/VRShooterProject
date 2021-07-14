@@ -28,6 +28,9 @@ public class Shooting : MonoBehaviour
     [SerializeField]
     private int _weaponDamage;
 
+    [SerializeField]
+    private Shooting _secondWeapon;
+
     public TextMeshPro _coinsIndicator;
 
     [SerializeField]
@@ -95,6 +98,7 @@ public class Shooting : MonoBehaviour
                         _moneyScript._money -= 40;
                         _coinsIndicator.text = _moneyScript._money.ToString();
                         _weaponDamage *= 2;
+                        _secondWeapon._weaponDamage *= 2;
                         hit.transform.gameObject.SetActive(false);
                     }
 

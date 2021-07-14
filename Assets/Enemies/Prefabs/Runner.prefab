@@ -657,6 +657,7 @@ MonoBehaviour:
   _enemy: {fileID: 7197324418989560508}
   _textAfterFrag: {fileID: 6669635640965394376, guid: 96ebc8e49ea4edf49a71ced9df9e2bf9,
     type: 3}
+  _money: {fileID: 3575341681936137866, guid: b8cc0f193c2a4f6459ceba313b2e5f21, type: 3}
   _spawnersScript: {fileID: 0}
   _actualHpText: {fileID: 269143327144904894}
   _end: {fileID: 0}

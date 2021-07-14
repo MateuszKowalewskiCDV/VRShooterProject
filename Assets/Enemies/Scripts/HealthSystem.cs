@@ -16,8 +16,8 @@ public class HealthSystem : MonoBehaviour
     private GameObject _enemy;
 
     [SerializeField]
-    private GameObject _textAfterFrag;
-    private GameObject _textAfterFragInstance;
+    private GameObject _textAfterFrag, _money;
+    private GameObject _textAfterFragInstance, _moneyInstance;
 
     [SerializeField]
     private Spawners _spawnersScript;
@@ -71,8 +71,10 @@ public class HealthSystem : MonoBehaviour
         if(_actualHp <= 0)
         {
             _moneyScript.AddMoney();
+            _moneyInstance = Instantiate(_money);
+            _moneyInstance.transform.position = new Vector3(_enemy.transform.position.x, _enemy.transform.position.y + 0.5f, _enemy.transform.position.z);
             _textAfterFragInstance = Instantiate(_textAfterFrag);
-            _textAfterFragInstance.transform.position = new Vector3(_enemy.transform.position.x, _enemy.transform.position.y + 2f, _enemy.transform.position.z);
+            _textAfterFragInstance.transform.position = new Vector3(_enemy.transform.position.x, _enemy.transform.position.y + 1.5f, _enemy.transform.position.z);
             _spawnersScript.CountNextWave();
             Destroy(_enemy);
         }

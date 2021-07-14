@@ -5,10 +5,10 @@
       "app_key": "application.generated.unity.vr.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\Mateusz Kowalewski\\Documents\\VR\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "D:\\4ExperienceVR\\VRShooterProject\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
-          "name": "VR [Testing]"
+          "name": "VRShooter [Testing]"
         }
       }
     }
