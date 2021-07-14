@@ -13,9 +13,9 @@ public class Money : MonoBehaviour
         _money = 0;
     }
 
-    public void AddMoney()
+    public void AddMoney(int value)
     {
-        _money += 2;
+        _money += value;
         _moneyIndicator.text = _money.ToString();
     }
 }

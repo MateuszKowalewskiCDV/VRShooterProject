@@ -70,9 +70,37 @@ public class HealthSystem : MonoBehaviour
 
         if(_actualHp <= 0)
         {
-            _moneyScript.AddMoney();
-            _moneyInstance = Instantiate(_money);
-            _moneyInstance.transform.position = new Vector3(_enemy.transform.position.x, _enemy.transform.position.y + 0.5f, _enemy.transform.position.z);
+            if (_hp == 120)
+            {
+                _moneyScript.AddMoney(3);
+                for(int i = 3; i > 0; i--)
+                {
+                    _moneyInstance = Instantiate(_money);
+                    _moneyInstance.transform.position = new Vector3(_enemy.transform.position.x, _enemy.transform.position.y + (i/5 + 0.5f), _enemy.transform.position.z);
+                }
+                
+            }
+
+            if (_hp == 40)
+            {
+                _moneyScript.AddMoney(1);
+                for (int i = 1; i > 0; i--)
+                {
+                    _moneyInstance = Instantiate(_money);
+                    _moneyInstance.transform.position = new Vector3(_enemy.transform.position.x, _enemy.transform.position.y + (i / 5 + 0.5f), _enemy.transform.position.z);
+                }
+            }
+
+            if (_hp == 80)
+            {
+                _moneyScript.AddMoney(2);
+                for (int i = 2; i > 0; i--)
+                {
+                    _moneyInstance = Instantiate(_money);
+                    _moneyInstance.transform.position = new Vector3(_enemy.transform.position.x, _enemy.transform.position.y + (i / 5 + 0.5f), _enemy.transform.position.z);
+                }
+            }
+
             _textAfterFragInstance = Instantiate(_textAfterFrag);
             _textAfterFragInstance.transform.position = new Vector3(_enemy.transform.position.x, _enemy.transform.position.y + 1.5f, _enemy.transform.position.z);
             _spawnersScript.CountNextWave();
