@@ -4,23 +4,31 @@ using UnityEngine;
 
 public class AlarmLights : MonoBehaviour
 {
-    private Light _light;
+    [SerializeField]
+    private Light _mainLight;
+
+    [SerializeField]
+    private GameObject _alarmLight;
+
+    [SerializeField]
+    private float _rotationValue;
+
+    [SerializeField]
     private float _time;
 
     void Start()
     {
-        _light = GetComponent<Light>();
         StartCoroutine(Lights());
     }
 
     IEnumerator Lights()
     {
-        _light.color = new Color(1, 1, 1, 1);
-        _light.range = 10;
-        yield return new WaitForSeconds(8f);
-        _light.color = new Color(1, 0, 0, 1);
-        _light.range = 100;
-        yield return new WaitForSeconds(8f);
+        _alarmLight.gameObject.SetActive(false);
+        _mainLight.gameObject.SetActive(true);
+        yield return new WaitForSeconds(_time);
+        _alarmLight.gameObject.SetActive(true);
+        _mainLight.gameObject.SetActive(false);
+        yield return new WaitForSeconds(_time);
         StartCoroutine(Lights());
     }
 }

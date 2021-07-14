@@ -40,6 +40,7 @@ public class Shooting : MonoBehaviour
     {
         _sound = GetComponent<AudioSource>();
         _particle = GetComponentInChildren<ParticleSystem>();
+        _moneyScript._moneyIndicatorPlayerView.text = _moneyScript._money.ToString();
     }
 
     private void Update()
@@ -87,6 +88,7 @@ public class Shooting : MonoBehaviour
                     if (hit.transform.gameObject.CompareTag("Upgrade1") && _moneyScript._money >= 20)
                     {
                         _moneyScript._money -= 20;
+                        _moneyScript._moneyIndicatorPlayerView.text = _moneyScript._money.ToString();
                         _coinsIndicator.text = _moneyScript._money.ToString();
                         laser1.gameObject.SetActive(true);
                         laser2.gameObject.SetActive(true);
@@ -96,6 +98,7 @@ public class Shooting : MonoBehaviour
                     if (hit.transform.gameObject.CompareTag("Upgrade2") && _moneyScript._money >= 40)
                     {
                         _moneyScript._money -= 40;
+                        _moneyScript._moneyIndicatorPlayerView.text = _moneyScript._money.ToString();
                         _coinsIndicator.text = _moneyScript._money.ToString();
                         _weaponDamage *= 2;
                         _secondWeapon._weaponDamage *= 2;

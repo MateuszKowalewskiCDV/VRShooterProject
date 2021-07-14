@@ -6,7 +6,7 @@ using TMPro;
 public class Money : MonoBehaviour
 {
     public int _money;
-    public TextMeshPro _moneyIndicator;
+    public TextMeshPro _moneyIndicator, _moneyIndicatorPlayerView;
 
     void Start()
     {
@@ -17,5 +17,6 @@ public class Money : MonoBehaviour
     {
         _money += value;
         _moneyIndicator.text = _money.ToString();
+        _moneyIndicatorPlayerView.text = _money.ToString();
     }
 }
