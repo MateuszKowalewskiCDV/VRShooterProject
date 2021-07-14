@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DestroyObject : MonoBehaviour
 {
+    [SerializeField]
+    private float _time;
+
     void Start()
     {
         StartCoroutine(DestroyMe());
@@ -11,7 +14,7 @@ public class DestroyObject : MonoBehaviour
 
     IEnumerator DestroyMe()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(_time);
         Destroy(gameObject);
     }
 }
