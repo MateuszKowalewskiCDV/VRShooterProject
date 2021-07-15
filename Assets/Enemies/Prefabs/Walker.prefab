@@ -288,6 +288,9 @@ MonoBehaviour:
     type: 3}
   _money: {fileID: 3575341681936137866, guid: b8cc0f193c2a4f6459ceba313b2e5f21, type: 3}
   _spawnersScript: {fileID: 0}
+  _takeDamage: {fileID: 2100000, guid: 359576a1ce9284c4b878a067b0f45d62, type: 2}
+  _enemyMaterial: {fileID: 2100000, guid: 976e32c29e5b95c4aa186420ad43f76f, type: 2}
+  _meshRenderer: {fileID: 6448340281028091204}
   _actualHpText: {fileID: 8820716108014188448}
   _end: {fileID: 0}
 --- !u!1 &1155735554457741943

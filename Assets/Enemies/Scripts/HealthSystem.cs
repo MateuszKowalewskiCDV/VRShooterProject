@@ -24,7 +24,11 @@ public class HealthSystem : MonoBehaviour
 
     private GameObject _player;
 
-    private int _waveNumber;
+    [SerializeField]
+    private Material _takeDamage, _enemyMaterial;
+
+    [SerializeField]
+    private SkinnedMeshRenderer _meshRenderer;
 
     [SerializeField]
     private TextMeshPro _actualHpText;
@@ -56,6 +60,7 @@ public class HealthSystem : MonoBehaviour
     public void GetShot(int damage)
     {
         _actualHp -= damage;
+        StartCoroutine(TakeDamageRepresentation());
         _actualHpText.text = _actualHp.ToString();
 
         if(_hp/2 >= _actualHp)
@@ -106,5 +111,12 @@ public class HealthSystem : MonoBehaviour
             _spawnersScript.CountNextWave();
             Destroy(_enemy);
         }
+    }
+
+    IEnumerator TakeDamageRepresentation()
+    {
+        _meshRenderer.material = _takeDamage;
+        yield return new WaitForSeconds(0.05f);
+        _meshRenderer.material = _enemyMaterial;
     }
 }

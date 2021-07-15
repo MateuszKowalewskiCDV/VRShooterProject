@@ -17,6 +17,7 @@ TagManager:
   - Shooting2
   - Money
   - Head
+  - NextWave
   layers:
   - Default
   - TransparentFX

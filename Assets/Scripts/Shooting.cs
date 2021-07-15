@@ -63,6 +63,13 @@ public class Shooting : MonoBehaviour
                         _spawnersScript.gameObject.SetActive(true);
                     }
 
+                    if (hit.transform.gameObject.CompareTag("NextWave"))
+                    {
+                        hit.transform.gameObject.SetActive(false);
+                        _spawnersScript.Next(_spawnersScript._waveNumber);
+                        _spawnersScript._shop.SetActive(false);
+                    }
+
                     if (hit.transform.gameObject.CompareTag("Enemy"))
                     {
                         _enemy = hit.transform.gameObject;

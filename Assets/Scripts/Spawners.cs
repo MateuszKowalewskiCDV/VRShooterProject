@@ -26,6 +26,11 @@ public class Spawners : MonoBehaviour
     [SerializeField]
     private TextMeshPro _levelIndicator;
 
+    [SerializeField]
+    private GameObject _nextButton;
+
+    public GameObject _shop;
+
     void Start()
     {
         _waveNumber = 0;
@@ -60,7 +65,8 @@ public class Spawners : MonoBehaviour
             else
             {
                 _waveNumber++;
-                Next(_waveNumber);
+                _nextButton.SetActive(true);
+                _shop.SetActive(true);
             }
         }
     }
